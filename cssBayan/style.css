@@ -1,0 +1,87 @@
+body {
+    background-color: rgb(255, 255, 255);
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+  }
+  
+  *:before,
+  *::after{
+    box-sizing: border-box;
+  }
+  
+  p {
+    margin: 0 0 5px;
+    text-align: center;  /* Изображение центруем */
+  }
+
+  /* FAQ */
+  .faq {
+    max-width: 800px;   /* Выравниваем по центру и делаем не большой отступ*/
+    margin: 20px auto;
+  }
+  .faq-item {
+    margin-bottom: 5px ; /* Отступы, что бы несколько элементов в списке не сливались*/
+    border: 1px solid #d40e0e;   /* Добавляю границы */
+  }
+  .faq-title{
+    display: block;
+    padding: 10px 15px; /* Внутренний отступ*/
+    color: #797474;
+    cursor: pointer;  /* Списки можно щёлкать( рука) */
+    position: relative;
+    font-size: calc(14px + 1vw); /* Минимальный и макс шрифт в зависимости от разрешения экрана*/
+
+    transition: background .2s ease-out; /* Плавное сменение фона*/
+  }
+  .faq-title::after{ /*Добавление стрелки в тайтл*/
+    content: "";
+    display: block;
+    border-style: solid;
+    border-width: 10px 5px 0 5px;
+    border-color: #0c0c0c transparent transparent transparent;
+
+    position: absolute;
+    top: 50%;
+    right: 15px;
+    transform: translateY(-50%);
+  }
+  .faq-title:hover{    /* Действия которые будут выполнятся при наведении*/
+    /* Сделать заливку по бардюру border: 1px solid #d40e0e; */
+    background-color: #d40e0e;
+    
+  }
+  .faq-input{
+    width: 0;
+    height: 0;
+    appearance: none;
+    position: absolute;
+  }
+  .faq-input:checked ~ .faq-title {
+    background-color: #ee4545;  
+  }
+  .faq-input:checked ~ .faq-title:after {
+    border-style: solid;   /* Разворот стрелки при закрытии меню*/
+    border-width: 0 5px 10px 5px;
+    border-color: transparent 
+    transparent #555758 
+    transparent;
+  }
+
+  .faq-input:checked ~ .faq-text {
+    display: block;
+  }  
+  .faq-text{
+    display: none;   /* По умолчанию должен быть скрыт, а потом указываем*/
+    padding: 10px 15px; /* Внутренний отступ*/
+  }
+
+  img.scale:hover{  /* Увеличение размера при наведении курсора*/
+    transform: scale(1.2);
+  }
+
+  .faq-title:hover {  /* При наведении изменять цвет с белого на черный.*/
+    color: #0a0a0a;
+}
+h1 { 
+    text-align: center }
